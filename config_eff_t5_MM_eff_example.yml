@@ -1,0 +1,40 @@
+## config.yaml
+# Hyperparameters
+MODEL: 'eff_s'
+BATCH_SIZE: 4
+LR: 0.00001 # 1e-5
+OPTIMIZER: 'adam'
+WEIGHT_DECAY: 0.01 # 1e-2 # used on adam optimizer
+MOMENTUM: 0 # used on sgd
+LR_SCHEDULER: None
+PATIENCE_EARLYSTOP: 5
+GAMMA: 0.1 # used on lr_scheduler step lr 
+STEP_SIZE: 15 # used on lr_scheduler step lr
+
+BACKBONE: 'eff_s'
+
+PW_BASED: "mean" # the way the pw is calculated.clear
+THRESHOLD: 100
+TASK: "prediction"
+PROBLEM: "prediction"
+NO_IVH: False
+INPUT_SIZE: 512
+LOSS: "focal"
+T: "2d_pred"
+TEST_TYPE: "t5"
+GPU: "0"
+
+APPLY_HFLIP: True
+HFLIP_P : 0.5
+AFFINE_P : 0.5
+APPLY_AFFINE: False
+APPLY_GAUSSIAN_BLUR: False
+
+AFFINE_DEGREE: 5
+AFFINE_TRANSLATE: 0
+AFFINE_SCALE: 1.0
+AFFINE_SHEAR: 0
+
+experiment_sample: "org_da_sy_es5_hf05_MM"
+threshold_name: "threshold50"
+threshold_percentage: 0.50 # The decision threshold for the probabilities.
