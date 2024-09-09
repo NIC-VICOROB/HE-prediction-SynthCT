@@ -104,13 +104,13 @@ class ImageClassifier(pl.LightningModule):
             self.backbone = backbone
 
         if self.model=='eff_s':
-            eff = torchvision.models.efficientnet_b0(weights="DEFAULT")
+            eff = torchvision.models.efficientnet_b0(weights=None)
             num_features = eff.classifier[1].in_features
             eff.classifier = nn.Linear(num_features, 1)
             self.backbone = eff
 
         if self.model == "densenet121":
-            densenet = torchvision.models.densenet121(pretrained=True)
+            densenet = torchvision.models.densenet121(pretrained=False)
             num_features = densenet.classifier.in_features
             densenet.classifier = nn.Linear(num_features, 1)
             self.backbone = densenet
